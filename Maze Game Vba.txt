@@ -1,0 +1,55 @@
+Sub Find_Cottage()
+'Starting point
+
+Range("D4").Offset(0, 1).Select
+
+'Keep Doing until the found cottage
+
+    Do Until LCase(ActiveCell.Value) = "cottage"
+        Select Case ActiveCell.Value
+
+            Case Is = "U"
+            MoveUP
+        
+            Case Is = "R"
+            MoveRight
+        
+            Case Is = "D"
+            MoveDown
+        
+            Case Is = "L"
+            MoveLeft
+        
+        End Select
+
+    Loop
+
+    MsgBox "Found the Cottage"
+
+End Sub
+
+Sub MoveUP()
+
+ActiveCell.Offset(-1, 0).Select
+
+End Sub
+
+Sub MoveRight()
+
+ActiveCell.Offset(0, 1).Select
+
+End Sub
+
+Sub MoveDown()
+
+ActiveCell.Offset(1, 0).Select
+
+End Sub
+
+Sub MoveLeft()
+
+ActiveCell.Offset(0, -1).Select
+
+End Sub
+
+
